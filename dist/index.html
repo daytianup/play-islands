@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#b9dbd1">
+<title>放映群岛 · Play Islands</title>
+<meta name="description" content="开着小车游览放映群岛，探索五款小游戏的实景宣传片与创作手记。">
+<link rel="canonical" href="https://daytianup.github.io/play-islands/">
+<meta property="og:title" content="放映群岛 · Play Islands"><meta property="og:type" content="website"><meta property="og:description" content="开上小车，沿着木桥探索五款原创小游戏。"><meta property="og:image" content="https://daytianup.github.io/play-islands/media/islands.jpg">
+<link rel="icon" href="./mark.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="app" tabindex="-1">
+  <div id="world" aria-hidden="true"></div><div id="pins" aria-label="展馆位置"></div>
+  <header>
+    <button class="brand" data-action="home" aria-label="放映群岛首页"><img src="./mark.svg" alt=""><span>放映群岛</span></button>
+    <nav aria-label="主导航">
+      <button data-action="home" class="nav-active"><i data-icon="map"></i><span>岛屿漫游</span></button>
+      <button data-action="library"><i data-icon="library"></i><span>作品片单</span></button>
+      <button data-action="notes"><i data-icon="note"></i><span>创作手记</span></button>
+    </nav>
+  </header>
+  <main id="intro">
+    <div class="kicker"><span></span>互动游戏作品集</div>
+    <h1 lang="en">Play<br> Islands<span>.</span></h1>
+    <p>开上小车，沿着木桥去发现<br class="wide-break">我开发的五款小游戏。</p>
+    <button id="start" class="primary" data-action="drive"><i data-icon="wheel"></i>开始漫游</button>
+  </main>
+  <div id="drive-hud" hidden><span><i data-icon="wheel"></i>驾驶中</span><button data-action="home">返回全景</button></div>
+  <div id="compass" aria-hidden="true"><span>N</span><svg viewBox="0 0 32 32"><path d="M16 2 21 25 16 22 11 25Z" fill="#2f5149"/><path d="M16 2 16 22 11 25Z" fill="#e98247"/></svg></div>
+  <div id="touch-pad" hidden aria-label="触屏驾驶">
+    <button data-motion="ArrowUp" aria-label="向前开">▲</button><button data-motion="ArrowLeft" aria-label="向左开">◀</button><button data-motion="ArrowDown" aria-label="向后开">▼</button><button data-motion="ArrowRight" aria-label="向右开">▶</button>
+  </div>
+  <div id="arrive" hidden><span id="arrive-name"></span><button data-action="play-near"><i data-icon="play"></i>放映</button></div>
+  <footer>
+    <button class="feature" id="feature" aria-label="播放流浪月球"><span class="feature-picture"><img src="media/moon.jpg" alt=""><span><i data-icon="playfill"></i></span></span><span class="feature-copy"><small>精选放映</small><strong>流浪月球</strong><em>月面探索<span> / </span>26 秒</em></span></button>
+    <div class="operation"><span class="keyset"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span><span>移动</span><span class="op-rule"></span><i data-icon="pointer"></i><span>点展馆看片</span></div>
+    <button class="viewed" data-action="library"><i data-icon="film"></i><span>已看 <b id="view-count">0</b> / 5</span></button>
+  </footer>
+  <p id="announcement" class="sr-only" role="status"></p>
+  <dialog id="panel" aria-labelledby="panel-title"><div id="panel-shell"><div class="dialog-top"><div><span id="eyebrow"></span><h2 id="panel-title"></h2></div><button id="close" class="round" aria-label="关闭"><i data-icon="close"></i></button></div><div id="panel-body"></div></div></dialog>
+  <noscript>请开启 JavaScript 进入 3D 群岛。可直接观看 <a href="media/moon.mp4">流浪月球</a>、<a href="media/palace1.mp4">初入宫廷</a>、<a href="media/palace2.mp4">逆袭登基</a>、<a href="media/tower.mp4">这桌通天了！</a>、<a href="media/haunt.mp4">这桌闹鬼啦！</a>。</noscript>
+</div><script type="module" src="./app.js"></script>
+</body></html>
